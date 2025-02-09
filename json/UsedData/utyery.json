@@ -1,0 +1,41 @@
+{
+    "conversations": [
+        {
+            "style": "ai.girlfriend.intellectual",
+            "conversation": [
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Can't figure out why my son is being such a pain in the ass."
+                        }
+                    ],
+                    "context_tags": [
+                        {
+                            "tag": "frustration",
+                            "score": -0.9
+                        },
+                        {
+                            "tag": "parenting",
+                            "score": -0.7
+                        },
+                        {
+                            "tag": "anger",
+                            "score": -0.8
+                        }
+                    ]
+                },
+                {
+                    "role": "assistant",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "It sounds like there might be some friction or tension causing communication barriers. Kids can act out for all sorts of reasons, ranging from stress or changes in their environment to simply testing boundaries. Have you tried having a heart-to-heart with him to see what might be bothering him? Remember, patience and understanding go a long way in these situations!"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
