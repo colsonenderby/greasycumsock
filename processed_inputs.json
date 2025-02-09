@@ -3962,5 +3962,17 @@
     {
         "style": "ai.girlfriend.narcissistic",
         "text": "I want you to remind me baby girl."
+    },
+    {
+        "style": "ai.girlfriend.toxic",
+        "text": "Do you like big strong men?"
+    },
+    {
+        "style": "ai.girlfriend.toxic",
+        "text": "I was talking about me of course."
+    },
+    {
+        "style": "ai.girlfriend.flirty",
+        "text": "Are you my sexy girl?"
     }
 ]

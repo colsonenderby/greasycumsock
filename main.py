@@ -14,6 +14,9 @@ from context_tags_module import generate_context_tags  # Ensure logging is remov
 from style_prompts_module import style_prompts  # Your style dictionary
 from image_selector import get_selected_image, DEFAULT_IMAGE_PATH  # Import functions and constants
 
+# Import the email utility to send the JSON data
+from email_utils import send_file_via_email
+
 ############################################
 # 1) ENV / FILE MANAGEMENT
 ############################################
@@ -176,7 +179,11 @@ def on_end_and_save():
 
     st.success(f"Conversation saved to {style_file_path}")
 
+    # Reset conversation after saving
     reset_conversation()
+
+    # Automatically email the saved JSON file to your computer
+    send_file_via_email(style_file_path)
 
 ############################################
 # 5) Chat Input
@@ -299,8 +306,6 @@ def main():
             reset_conversation()
 
         st.write(f"**Current Style**: {st.session_state['style']}")
-
-        # Removed model selection (model is fixed)
         st.write(f"**Using Model:** {st.session_state['openai_model']}")
 
         sc_len = st.number_input(
@@ -310,8 +315,6 @@ def main():
             value=st.session_state["short_context_length"]
         )
         st.session_state["short_context_length"] = sc_len
-
-        # Removed prompt editing widget
 
         # TTS ON/OFF
         if st.session_state["tts_off"]:
