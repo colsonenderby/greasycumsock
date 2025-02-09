@@ -1,18 +1,16 @@
-# image_selector.py
-
 import os
 import random
 from tag_grouping import tag_categories  # Ensure tag_grouping.py is in the same directory or in PYTHONPATH
 
 # Define Category Weights as per user specification
 CATEGORY_WEIGHTS = {
-    "Sexual & Explicit Content": 6,
+    "Sexual & Explicit Content": 5,
     "Relationship Dynamics": 5,
     "Emotions": 4,
-    "Interaction Styles": 3,
-    "Intentions & Behaviors": 3,
-    "Topics & Activities": 2,
-    "Values & Ethics": 1,
+    "Interaction Styles": 4,
+    "Intentions & Behaviors": 4,
+    "Topics & Activities": 4,
+    "Values & Ethics": 4,
     "Miscellaneous": 1
 }
 
@@ -44,11 +42,21 @@ SUBCATEGORY_HIERARCHY = {
     # Add similar hierarchies for other categories if needed
 }
 
-# Define the base path for images
-IMAGE_BASE_PATH = r"C:\Users\colso\Documents\Side_Bitch\New_gpt_interface\base_images\toxic"
+# Use relative paths instead of absolute paths.
+# BASE_DIR is the directory of the current file (image_selector.py)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Define the default image path
-DEFAULT_IMAGE_PATH = r"C:\Users\colso\Documents\Side_Bitch\New_gpt_interface\base_images\toxic\Miscellaneous\Others\116455_A gothic realistic anime-style girlfriend with sle_xl-1024-v1-0.png"  # Update as needed
+# Define the base path for images relative to the repository root.
+# Adjust the folder names if your repository structure is different.
+IMAGE_BASE_PATH = os.path.join(BASE_DIR, "base_images", "toxic")
+
+# Define the default image path relative to IMAGE_BASE_PATH.
+DEFAULT_IMAGE_PATH = os.path.join(
+    IMAGE_BASE_PATH,
+    "Miscellaneous",
+    "Others",
+    "116455_A gothic realistic anime-style girlfriend with sle_xl-1024-v1-0.png"
+)
 
 def map_tag_to_category(tag):
     """
